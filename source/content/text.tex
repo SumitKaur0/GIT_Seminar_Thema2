@@ -11,14 +11,15 @@
 \section{Criteria}
 
 \subsection{Color distance}
-\parencite{brychtova2015}
-\parencite{brychtova2017}
-\parencite{sharma2005}
-\parencite{coltekin2015}
-\parencite{coltekin2017}
+
+- RGB cause RGB represents how colors are created on most digital screens. 
+- RGB values do not lead to a specific color if not related to an absolut color Space
+- As a color space sRGB is selected, since sRGB color space is supported by most digital screens. Other color Spaces such as Adobe RGB are not fully suported by most digital screens. When puplishing a digital map creators should choose colors which can be displayed by most screens, therefore sRGB is the color space to choose.
 
 \subsubsection{Equation}
-
+- transforming sRGB Colors to CIE XYZ Colors. 
+- Was ist CIE XYZ Colors
+- For the transformation the sRGB values has to be in the range 0.0 - 1.0, therefore the most values have to be divided by 255 to nomalize them. 
 \subsection{Number of classes}
 
 \subsection{Further aspects}
