@@ -1,5 +1,6 @@
 \section{Introduction}
 The ability to distinguish colors and shades of the same color plays an important role in cartography \parencite{coltekin2017}
+Lack of proper visual distance in variables colour hue and colour value is a known contributor to legibility problems in map use tasks (Chesneau, 2007; Steinrücken & Plümer, 2013; Stigmar, 2010)\parencite{brychtova2015}
 \subsection{Choropleth maps}
 
 \section{Basic color information}
@@ -22,6 +23,10 @@ This color distance describes a metric that quantifies the human ability to visu
 \section{Criteria}
 
 \subsection{Color distance}\label{subsection:distance}
+Visual Distance in cartography is understood as a Measurement of Differences between visual variables such as size, shape, orientation and others \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color Distance. In other words, certain change of the colour in the perceptually uniform space produces equal change in human perception of that colour (Slocum et a!. 2008 \parencite{brychtova2017}).
+
+To describe the distance of two colors scientistis have developed a method to describe the color distance. To express color quantitatively a colour space corresponding to the human perception is needed. Such color spaces are called perceptually uniform or linear. The use of such color spaces try to ensure results of color distance which are proportional to the human perception (CIE, 2012 \parencite{brychtova2015}). Presently the CIEDE2000 model ($\delta$E00, equation defined in Sharma, Wu, \& Dalal, 2005 \parencite{brychtova2015}) is regarded as the best coinciding color space with visual perception. 
+ 
 - RGB cause RGB represents how colors are created on most digital screens. 
 - RGB values do not lead to a specific color if not related to an absolut color Space
 - As a color space sRGB is selected, since sRGB color space is supported by most digital screens. Other color Spaces such as Adobe RGB are not fully suported by most digital screens. When puplishing a digital map creators should choose colors which can be displayed by most screens, therefore sRGB is the color space to choose.
