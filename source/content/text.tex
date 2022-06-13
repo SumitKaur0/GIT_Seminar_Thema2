@@ -1,8 +1,16 @@
+\section{Hypothese}
+Die Differenzierbarkeit von Farben beim Betrachten von Choroplethenkarten hängt vorallem von der Farbdistanz zwischen den Farben und der Anzahl der Farbklassen ab.
+
 \section{Introduction}
 From a designer's perspective, colors play an essential role in cartography. Nevertheless, according to \textcite{brychtova2017}, there is little research to empirically determine the minimum effective color distance to safely and correctly distinguish cartographic symbols. 
 
 The ability to distinguish colors and shades of the same color plays an important role in cartography \parencite{coltekin2017}
-Lack of proper visual distance in variables colour hue and colour value is a known contributor to legibility problems in map use tasks (Chesneau, 2007; SteinrÃ¼cken & PlÃ¼mer, 2013; Stigmar, 2010)\parencite{brychtova2015}
+
+Even subtle manipulation of color spacing shows significant effects on the impact on overall readability of a map (Brychtova et al. 2016; Brychtova and \i:iltekin 2015; Brychtova and \i:iltekin 2014; Brychtova 2014; Brychtova and Vondrakova
+2014). 
+
+Lack of proper visual distance in variables colour hue and colour value is a known contributor to legibility problems in map use tasks (Chesneau, 2007; Steinrücken \& Plümer, 2013; Stigmar, 2010)\parencite{brychtova2015}
+
 \subsection{Choropleth maps}
 
 \section{Basic color information}
@@ -32,16 +40,19 @@ To describe the distance of two colors scientistis have developed a method to de
 - RGB cause RGB represents how colors are created on most digital screens. 
 - RGB values do not lead to a specific color if not related to an absolut color Space
 - As a color space sRGB is selected, since sRGB color space is supported by most digital screens. Other color Spaces such as Adobe RGB are not fully suported by most digital screens. When puplishing a digital map creators should choose colors which can be displayed by most screens, therefore sRGB is the color space to choose.
+
 \subsubsection{Equation}
 
 - transforming sRGB Colors to CIE XYZ Colors. 
 - Was ist CIE XYZ Colors
 - For the transformation the sRGB values has to be in the range 0.0 - 1.0, therefore the most values have to be divided by 255 to nomalize them. 
+
 \subsection{Number of classes}
 
 \subsection{Further aspects}
 
 \subsubsection{Spatial distance}
+The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes (Brychtova and \i:iltekin 2016).
 
 \subsubsection{Brightness of colors}
 
@@ -51,8 +62,6 @@ Brewer and her colleagues (Brewer eta!. 2003; Brewer 1986, 1992, 1994, 1996, 199
 They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtova2017}. 
 
 The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion. Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale.
-
-
 
 \section{Conclusion}
 
