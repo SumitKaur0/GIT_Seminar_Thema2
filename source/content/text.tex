@@ -29,11 +29,16 @@ Nevertheless, there are many efforts to model and quantify color perception such
 This color distance describes a metric that quantifies the human ability to visually distinguish differences between two colors see chapter \ref{subsection:distance} \parencite{coltekin2017}.
 
 \subsection{Color spaces}
+There are a lot of color models that have set themselves the task of representing the logic of generating colors (Kuehni, 2001). These color models can be divided into four main groups: instrumental, pseudo-perceptual, colorimetric, and perceptual unitary color models.
+
+Instrumental color models include, for example, RBG or CMYK. Pseudoperceptual color models are e.g. HVS or HSB, whereas colorimetric color models are represented e.g. by CIE 1931 XYZ. To the latter model (perceptually uniform) belong for example the Munsell system, CIELAB or CIELUV. The most frequently used color models are the CIE 1931 XYZ or CIELAB. 
+
+A color space is understood to be all existing colors that can be represented e.g. by a screen, printer or the human eye, which are generated from a combination of the components of a model \parencite{munsell1915}.
 
 \section{Criteria}
 
 \subsection{Color distance}\label{subsection:distance}
-Visual Distance in cartography is understood as a Measurement of Differences between visual variables such as size, shape, orientation and others \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color Distance. In other words, certain change of the colour in the perceptually uniform space produces equal change in human perception of that colour (Slocum et a!. 2008 \parencite{brychtova2017}).
+Visual Distance in cartography is understood as a Measurement of Differences between visual variables such as size, shape, orientation and others \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color Distance. In other words, certain change of the colour in the perceptually uniform space produces equal change in human perception of that colour (Slocum et al. 2008 \parencite{brychtova2017}).
 
 To describe the distance of two colors scientistis have developed a method to describe the color distance. To express color quantitatively a colour space corresponding to the human perception is needed. Such color spaces are called perceptually uniform or linear. The use of such color spaces try to ensure results of color distance which are proportional to the human perception (CIE, 2012 \parencite{brychtova2015}). Presently the CIEDE2000 model ($\delta$E00, equation defined in Sharma, Wu, \& Dalal, 2005 \parencite{brychtova2015}) is regarded as the best coinciding color space with visual perception. 
  
@@ -52,7 +57,9 @@ To describe the distance of two colors scientistis have developed a method to de
 \subsection{Further aspects}
 
 \subsubsection{Spatial distance}
-The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes (Brychtova and \i:iltekin 2016).
+The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes (Brychtova and \i:iltekin 2016). However, at a color distance of $\delta E_{00}$ = 10, the accuracy of color discrimination increases, even at relatively large spatial distances. 
+
+
 
 \subsubsection{Brightness of colors}
 
@@ -61,7 +68,15 @@ Brewer and her colleagues (Brewer eta!. 2003; Brewer 1986, 1992, 1994, 1996, 199
 
 They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtova2017}. 
 
-The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion. Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale.
+The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion. Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{source/images/munsell}
+	\caption{Munsell Color System}
+	\label{fig:munsell}
+\end{figure}
+
 
 \section{Conclusion}
 
