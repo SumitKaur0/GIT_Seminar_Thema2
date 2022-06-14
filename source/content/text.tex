@@ -11,7 +11,13 @@ Even subtle manipulation of color spacing shows significant effects on the impac
 
 Lack of proper visual distance in variables colour hue and colour value is a known contributor to legibility problems in map use tasks (Chesneau, 2007; Steinrücken \& Plümer, 2013; Stigmar, 2010)\parencite{brychtova2015}
 
-\subsection{Choropleth maps}
+\subsection{Simple Choropleth maps}
+Unlike chorochromatic maps, which visualize nominal (qualitative) data, simple choropleth maps have made it their business to display quantitative data in terms of area. In doing so, hue, saturation and brightness are used to show corresponding changes in the data. Although in theory choropleth maps are only useful for data related to areas (Bollmann et al. 2001), in practice they are also used for non-area related data. E.G. ? https://link.springer.com/content/pdf/10.1007/BF03545206.pdf
+
+Some advantages of choropleth maps are e.g. the simplified visibility. For this, the data are classified. For example, one can distinguish between an equal interval and a quantile class division. With equal interval each class possesses the same size independently of its occupation, whereas with a quantile class division each class contains the same number of elements. Depending on the use case and data frequency, one or the other class division is more suitable, because they have a significant influence on the appearance of a map.
+https://www.ssoar.info/ssoar/handle/document/67524
+
+Due to the public availability of static data, the production of these maps is easy and can be linked, analyzed, classified and visualized with any suitable GIS software. https://link.springer.com/content/pdf/10.1007/BF03545206.pdf
 
 \section{Basic color information}
 
@@ -40,7 +46,7 @@ A color space is understood to be all existing colors that can be represented e.
 \subsection{Color distance}\label{subsection:distance}
 Visual Distance in cartography is understood as a Measurement of Differences between visual variables such as size, shape, orientation and others \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color Distance. In other words, certain change of the colour in the perceptually uniform space produces equal change in human perception of that colour (Slocum et al. 2008 \parencite{brychtova2017}).
 
-To describe the distance of two colors scientistis have developed a method to describe the color distance. To express color quantitatively a colour space corresponding to the human perception is needed. Such color spaces are called perceptually uniform or linear. The use of such color spaces try to ensure results of color distance which are proportional to the human perception (CIE, 2012 \parencite{brychtova2015}). Presently the CIEDE2000 model ($\delta$E00, equation defined in Sharma, Wu, \& Dalal, 2005 \parencite{brychtova2015}) is regarded as the best coinciding color space with visual perception. 
+To describe the distance of two colors scientistis have developed a method to describe the color distance. To express color quantitatively a colour space corresponding to the human perception is needed. Such color spaces are called perceptually uniform or linear. The use of such color spaces try to ensure results of color distance which are proportional to the human perception (CIE, 2012 \parencite{brychtova2015}). Presently the CIEDE2000 model ($\Delta E_{00}$, equation defined in Sharma, Wu, \& Dalal, 2005 \parencite{brychtova2015}) is regarded as the best coinciding color space with visual perception. 
  
 - RGB cause RGB represents how colors are created on most digital screens. 
 - RGB values do not lead to a specific color if not related to an absolut color Space
@@ -53,38 +59,44 @@ To describe the distance of two colors scientistis have developed a method to de
 - For the transformation the sRGB values has to be in the range 0.0 - 1.0, therefore the most values have to be divided by 255 to nomalize them. 
 
 \subsection{Number of classes}
+\textcite{brychtova2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{brychtova2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
+
+\begin{table}[h!]
+\centering
+\caption[Color distance depending on number of classes]{Color distance depending on number of classes \\ (According to \textcite{brychtova2017})}
+	\begin{tabular}{c c c c }
+		\hline
+		\hline
+		Number of classes & $\Delta E_{00}min$ & $\Delta E_{00}max$ & $\Delta E_{00}mean$ \\ 
+		\hline
+		\hline
+		3 & 11.26 & 33.92 & 20.61 \\  
+		6 & 6.24 & 26.44 & 12.41 \\
+		9 & 3.04 & 20.46 & 10.28   
+	\end{tabular}
+\label{tab:classes}
+\end{table}
 
 \subsection{Further aspects}
 
 \subsubsection{Spatial distance}
-The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes (Brychtova and \i:iltekin 2016). However, at a color distance of $\delta E_{00}$ = 10, the accuracy of color discrimination increases, even at relatively large spatial distances. 
-
-
+The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes (Brychtova and \i:iltekin 2016). However, at a color distance of $\Delta E_{00}$ = 10, the accuracy of color discrimination increases, even at relatively large spatial distances. 
 
 \subsubsection{Brightness of colors}
 
 \section{Examples}
-Brewer and her colleagues (Brewer eta!. 2003; Brewer 1986, 1992, 1994, 1996, 1997, 1999; Harrower and Brewer 2003) did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. 
-
-They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtova2017}. 
+\subsection{ColorBrewer2.0}
+Brewer and her colleagues (Brewer eta!. 2003; Brewer 1986, 1992, 1994, 1996, 1997, 1999; Harrower and Brewer 2003) did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. ColorBrewer 2.0 offers the user a choice between 18 sequential, 9 divergent and 8 qualitative color schemes. Depending on the selection, a distinction can be made between 3 and 12 classes. They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtova2017}. 
 
 The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion. Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{source/images/munsell}
+	\includegraphics[width=0.6\linewidth]{source/images/munsell}
 	\caption{Munsell Color System}
 	\label{fig:munsell}
 \end{figure}
 
-
 \section{Conclusion}
 
-
-\parencite{brychtova2015}
-\parencite{brychtova2017}
-\parencite{sharma2005}
-\parencite{coltekin2015}
-\parencite{coltekin2017}
-
-\bibliography
+%\bibliography
