@@ -1,0 +1,93 @@
+\appendix
+\section{Further equation}
+\begin{equation}
+C_{1,ab}=\sqrt{(a_{1})^{2}+(b_{1})^{2}} \quad C_{2,ab}=\sqrt{(a_{2})^{2}+(b_{2})^{2}}
+\end{equation}
+\begin{equation}
+\bar{C}_{ab}=\frac{C_{1,ab}+C_{2,ab}}{2}
+\end{equation}
+\begin{equation}
+G = 0.5(1-\sqrt{\frac{\bar{C}_{ab}^{7}}{\bar{C}_{ab}^{7}+25^7}})
+\end{equation}
+\begin{equation}
+a_{1}'=(1+G)a_{1} \quad a_{2}'=(1+G)a_{2} 
+\end{equation}
+\begin{equation}
+C_{1}'=\sqrt{(a_{1}')^{2}+(b_{1})2} \quad C_{2}'=\sqrt{(a_{2}')^{2}+(b_{2})2}
+\end{equation}
+\begin{equation}
+h_{1}' = atan2(b_{1},a_{1}') =
+\begin{cases}
+tan^{-1}(\frac{b_{1}}{a_{1}'}) & b_{1}>0,a_{1}' \geq 0\\
+tan^{-1}(\frac{b_{1}}{a_{1}'})+180^{\circ} & b_{1}<0\\
+tan^{-1}(\frac{b_{1}}{a_{1}'})+360^{\circ} & b_{1}>0,a_{1}'<0 \\
+90^{\circ} & b_{1}=0,a_{1}'>0\\
+270^{\circ} & b_{1}=0,a_{1}'<0\\
+0^{\circ} & b_{1}=0,a_{1}'=0
+\end{cases}
+\end{equation}
+\begin{equation}
+h_{2}' = atan2(b_{2},a_{2}') =
+\begin{cases}
+tan^{-1}(\frac{b_{2}}{a_{2}'}) & b_{2}>0,a_{2}' \geq 0\\
+tan^{-1}(\frac{b_{2}}{a_{2}'})+180^{\circ} & b_{2}<0\\
+tan^{-1}(\frac{b_{2}}{a_{2}'})+360^{\circ} & b_{2}>0,a_{2}'<0 \\
+90^{\circ} & b_{2}=0,a_{2}'>0\\
+270^{\circ} & b_{2}=0,a_{2}'<0\\
+0^{\circ} & b_{2}=0,a_{2}'=0
+\end{cases}
+\end{equation}
+\begin{equation}
+\Delta L'=L_{2}-L_{1}
+\end{equation}
+\begin{equation}
+\Delta C'=C_{2}'-C_{1}'
+\end{equation}
+\begin{equation}
+\Delta h' =
+\begin{cases}
+0 & C_{1}'C_{2}'=0\\
+h_{2}'-h_{1}' & C_{1}'C_{2}'\ne q0, |h_{2}'-h_{1}'| \geq -180^{\circ}\\
+(h_{2}'-h_{1}')-360^{\circ} & C_{1}'C_{2}'\neq 0, (h_{2}'-h_{1}') > -180^{\circ}\\
+(h_{2}'-h_{1}')+360^{\circ} & C_{1}'C_{2}'\neq 0, (h_{2}'-h_{1}') < -180^{\circ}
+\end{cases}
+\end{equation}
+\begin{equation}
+\Delta H'=2\sqrt{C_{1}'C_{2}'}sin(\frac{\Delta h'}{2})
+\end{equation}
+\begin{equation}
+\bar{L}'=\frac{L_{1}+L_{2}}{2}
+\end{equation}
+\begin{equation}
+\bar{C}'=\frac{C_{1}'+C_{2}'}{2}
+\end{equation}
+\begin{equation}
+\bar{h'} =
+\begin{cases}
+\frac{h_{1}'+h_{2}'}{2} & C_{1}'C_{2}'\neq 0 \wedge |h_{2}'-h_{1}'| \leq 180^{\circ}\\
+\frac{h_{1}'+h_{2}'+360^{\circ}}{2}& |h_{2}'-h_{1}'| > 180^{\circ} \wedge (h_{2}'-h_{1}') < 180^{\circ}\\
+\frac{h_{1}'+h_{2}'-360^{\circ}}{2} & |h_{2}'-h_{1}'| > 180^{\circ} \wedge (h_{2}'-h_{1}') \geq 360^{\circ}\\
+h_{1}'+h_{2}' & C_{1}'C_{2}'=0
+\end{cases}
+\end{equation}
+\begin{equation}
+T=1-0.17 cos(\bar{h}'-30^{\circ})+0.24 cos(2\bar{h}')+0.32(3\bar{h}'+6^{\circ})-0.2 cos(4\bar{h}'-63^{\circ})
+\end{equation}
+\begin{equation}
+\Delta 0 = 30e^{-(\frac{h'-275^{\circ}}{25})^{2}}
+\end{equation}
+\begin{equation}
+R_{c}=2\sqrt{\frac{\bar{C'}_{ab}^{7}}{\bar{C'}_{ab}^{7}+25^{7}}}
+\end{equation}
+\begin{equation}
+S_{L}=1+\frac{0.015(\bar{L}'-50)^{2}}{\sqrt{20+(\bar{L}'-50)^{2}}}
+\end{equation}
+\begin{equation}
+S_{C}=1+0.0045\bar{C}'
+\end{equation}
+\begin{equation}
+S_{H}=1+0.0045\bar{C}'T
+\end{equation}
+\begin{equation}
+R_{T}=-sin(2 \Delta 0)R_{c}
+\end{equation}
