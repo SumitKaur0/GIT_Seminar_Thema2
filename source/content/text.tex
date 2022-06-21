@@ -1,5 +1,5 @@
 \section{Hypothese}
-Die Differenzierbarkeit von Farben beim Betrachten von Choroplethenkarten hÃ¤ngt vorallem von der Farbdistanz zwischen den Farben und der Anzahl der Farbklassen ab.
+Die Differenzierbarkeit von Farben beim Betrachten von Choroplethenkarten hängt vorallem von der Farbdistanz zwischen den Farben und der Anzahl der Farbklassen ab.
 
 \section{Introduction}
 From a designer's perspective, colors play an essential role in cartography. Nevertheless, according to \textcite{brychtovaC2017}, there is little research to empirically determine the minimum effective color distance to safely and correctly distinguish cartographic symbols. 
@@ -20,11 +20,11 @@ Due to the public availability of static data, the production of these maps is e
 \section{Basic color information}
 
 \subsection{Human' color perception}
-Although our current understanding is that color vision results from the response of three photoreceptor cells in the retina to incident light, their perception cannot be fully understood. This may be due to both individual and environmental factors that influence color perception. \textcolor{red}{(Lafer-Sousa et al. 2015; Xiao et al. 2016) (Gegenfurtner and Sharpe 2001)}. 
+Although our current understanding is that color vision results from the response of three photoreceptor cells in the retina to incident light, their perception cannot be fully understood. This may be due to both individual and environmental factors that influence color perception \parencite{lafer2015, xiao2016}.
 
-Some of these factors can be, for example, the amount of light in the environment, shadows, surrounding materials, and reflectivity. In addition, the viewer's prior knowledge and cognitive biases play a significant role in color perception. \textcolor{red}{(Derefeldt et al. 2004; Foster 2011)}. 
+Some of these factors can be, for example, the amount of light in the environment, shadows, surrounding materials, and reflectivity. In addition, the viewer's prior knowledge and cognitive biases play a significant role in color perception \parencite{derefeldt2004, foster2011}.
 
-In addition, there is evidence that the number and distribution of photoreceptors in the eye influences what we see (\textcolor{red}{Roy et al., 1991)}, and that our brain assumes a particular direction or light source e.g., \textcolor{red}{Gegenfurtner et al. 2015; Lafer Sousa et al. 2015; Winkler et al. 2015}. 
+In addition, there is evidence that the number and distribution of photoreceptors in the eye influences what we see \parencite{roy1991}, and that our brain assumes a particular direction or light source e.g., \parencite{gegenfurtner2015, lafer2015}.
 
 Thus, it can be said that the color perception of an individual is not stable over space and time. The same is true not only for individuals but also for groups.  
 
@@ -33,7 +33,7 @@ Nevertheless, there are many efforts to model and quantify color perception such
 This color distance describes a metric that quantifies the human ability to visually distinguish differences between two colors see chapter \ref{subsection:distance} \parencite{coltekin2017}.
 
 \subsection{Color spaces}
-There are a lot of color models that have set themselves the task of representing the logic of generating colors \textcolor{red}{(Kuehni, 2001)}. These color models can be divided into four main groups: instrumental, pseudo-perceptual, colorimetric, and perceptual unitary color models.
+There are a lot of color models that have set themselves the task of representing the logic of generating colors \parencite{kuehni2001}. These color models can be divided into four main groups: instrumental, pseudo-perceptual, colorimetric, and perceptual unitary color models.
 
 Instrumental color models include, for example, RBG or CMYK. Pseudoperceptual color models are e.g. HVS or HSB, whereas colorimetric color models are represented e.g. by CIE 1931 XYZ. To the latter model (perceptually uniform) belong for example the Munsell system, CIELAB or CIELUV. The most frequently used color models are the CIE 1931 XYZ or CIELAB. 
 
@@ -42,11 +42,11 @@ A color space is understood to be all existing colors that can be represented e.
 \section{Criteria}
 
 \subsection{Color distance}\label{subsection:distance}
-Visual Distance in cartography is understood as a Measurement of Differences between visual variables such as size, shape, orientation and others \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color Distance. In other words, certain change of the colour in the perceptually uniform space produces equal change in human perception of that colour \textcolor{red}{(Slocum et al. 2008} \parencite{brychtova2017}).
+Visual Distance in cartography is understood as a Measurement of Differences between visual variables such as size, shape, orientation and others \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color Distance. In other words, certain change of the colour in the perceptually uniform space produces equal change in human perception of that colour\parencite{brychtovaC2017}).
 
-To describe the distance of two colors scientistis have developed a method to describe the color distance. To express color quantitatively a colour space corresponding to the human perception is needed. Such color spaces are called perceptually uniform or linear. The use of such color spaces try to ensure results of color distance which are proportional to the human perception (CIE, 2012 \parencite{brychtova2015}). Presently the CIEDE2000 model ($\Delta E_{00}$, equation defined in \textcolor{red}{Sharma, Wu, \& Dalal, 2005} \parencite{brychtova2015}) is regarded as the best coinciding color distance model with visual perception. 
+To describe the distance of two colors scientistis have developed a method to describe the color distance. To express color quantitatively a colour space corresponding to the human perception is needed. Such color spaces are called perceptually uniform or linear. The use of such color spaces try to ensure results of color distance which are proportional to the human perception (CIE, 2012 \parencite{brychtova2015}). Presently the CIEDE2000 model ($\Delta E_{00}$, equation defined in \parencite{brychtova2015}) is regarded as the best coinciding color distance model with visual perception. 
  
-Typically colors of digital maps are in a RGB color space cause colors are created with those three colors (red, green, blue) on the majority if not all digital screens. However RGB values do not lead to specific color if they are not related to an absolut color space such as sRGB, Adobe RGB or ProPhoto RGB. To use the most realistic color Space, the colors at the initial situation should be given and choosed in the sRGB Color Space. Why most realistic? As mentioned before sRGB is the smallest color space of the three. The vast majority of digital screens cannot create all colors of Adobe RGB or even ProPhoto RGB. Even sRGB isent fully supported by cheap Laptop Screens. However sRGB is known as the default color space \textcolor{red}{(https://www.kenrockwell.com/tech/adobe-rgb.htm)}. Therefore sRGB should be choosed to increase the chance that the users screen actually is able to display the color which was choosed by the creater of a map. 
+Typically colors of digital maps are in a RGB color space cause colors are created with those three colors (red, green, blue) on the majority if not all digital screens. However RGB values do not lead to specific color if they are not related to an absolut color space such as sRGB, Adobe RGB or ProPhoto RGB. To use the most realistic color Space, the colors at the initial situation should be given and choosed in the sRGB Color Space. Why most realistic? As mentioned before sRGB is the smallest color space of the three. The vast majority of digital screens cannot create all colors of Adobe RGB or even ProPhoto RGB. Even sRGB isent fully supported by cheap Laptop Screens. However sRGB is known as the default color space \parencite{kenrockwell2006}. Therefore sRGB should be choosed to increase the chance that the users screen actually is able to display the color which was choosed by the creater of a map. 
 
 \subsubsection{Equation}\label{subsec:equation}
 The first step to calculate the color distance $\Delta E_{00}$ is the transformation from the original color space (as mentioned above this would be sRGB in most cases) to CIE 1931 XYZ color space. For that the RGB values have to be normalized so the values lie in the interval [0; 1]. 
@@ -74,7 +74,7 @@ B_{lin} \\
 \end{array}\right]
 \end{equation}
 
-The second step is the transformation of the colors into CIE Lab. The CIELAB Colorspace, also known as CIE 1976 (L*, a*, b*) describes all colors perceptible by human eyes (Levkowitz 1997). It consists of three components: L describes the brightness [0 - 100], a describes the axis between red and green and b describes the axis of the blue and yellow colors. While negative values stand for green/blue colors and positive values for magenta and yellow). Theoretically the a and b values are not limited but in praxis human eyes can only see colors upin a specific value. 
+The second step is the transformation of the colors into CIE Lab. The CIELAB Colorspace, also known as CIE 1976 (L*, a*, b*) describes all colors perceptible by human eyes \parencite{levkowitz1997}. It consists of three components: L describes the brightness [0 - 100], a describes the axis between red and green and b describes the axis of the blue and yellow colors. While negative values stand for green/blue colors and positive values for magenta and yellow). Theoretically the a and b values are not limited but in praxis human eyes can only see colors upin a specific value. 
 
 \begin{equation}
 L = 116 f\left(\frac{Y}{Y_{n}}\right)-16
@@ -103,13 +103,14 @@ Finally the last step is to calculate the color distance $\Delta E_{00}$ between
 where $\Delta L'$, $\Delta C'$ and $\Delta H'$ are the CIELAB metric lightness, chroma, and hue differences, calculated
 between the standard and sample in a pair and $S_{L}$, $S_{C}$ and $S_{H}$ are the weighting functions for the lightness,
 chroma, and hue components. However as the formulars are fairly large the equations can be found in the \ref{further equation}.
-The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. (Lue et al 2001 \parencite{brychtova2015}). 
+The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
+
 \subsection{Number of classes}
-\textcite{brychtova2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{brychtova2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
+\textcite{brychtovaC2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{ brychtovaC2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
 
 \begin{table}[h!]
 \centering
-\caption[Color distance depending on number of classes]{Color distance depending on number of classes \\ (According to \textcite{brychtova2017})}
+\caption[Color distance depending on number of classes]{Color distance depending on number of classes \\ (According to \textcite{brychtovaC2017})}
 	\begin{tabular}{c c c c }
 		\hline
 		\hline
@@ -126,19 +127,20 @@ The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjuste
 \subsection{Further aspects}
 
 \subsubsection{Spatial distance}
-The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes (Brychtova and \i:iltekin 2016). However, at a color distance of $\Delta E_{00}$ = 10, the accuracy of color discrimination increases, even at relatively large spatial distances. 
+The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes. However, at a color distance of $\Delta E_{00}$ = 10, the accuracy of color discrimination increases, even at relatively large spatial distances \parencite{brychtovaC2017}. 
 
 \subsubsection{Brightness of colors}
 
-An evaluting case study of color distqances in ColorBrewer 2.0 from \textcite{brychtova2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtova2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schmes with 9 classes show their largest color distances in the darker middle colors.
-Bild einfï¿½gen. 
+An evaluting case study of color distqances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schmes with 9 classes show their largest color distances in the darker middle colors.
+
+Bild einfügen. 
 
 
 \section{Examples}
 \subsection{ColorBrewer2.0}
-Brewer and her colleagues \textcolor{red}{(Brewer eta!. 2003; Brewer 1986, 1992, 1994, 1996, 1997, 1999; Harrower and Brewer 2003)} did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. ColorBrewer 2.0 offers the user a choice between 18 sequential, 9 divergent and 8 qualitative color schemes. Depending on the selection, a distinction can be made between 3 and 12 classes. They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtova2017}. 
+Brewer and her colleagues \parencite{brewer2003, brewer1994, brewer1996, brewer1997, brewer1999} did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. ColorBrewer 2.0 offers the user a choice between 18 sequential, 9 divergent and 8 qualitative color schemes. Depending on the selection, a distinction can be made between 3 and 12 classes. They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtovaC2017}. 
 
-The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion. Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
+The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion (\ref{fig:munsell}). Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
 
 \begin{figure}
 	\centering
@@ -155,15 +157,13 @@ For this we look which color tones lie on the straight line. This follows at giv
 
 It must be kept in mind that this method is only suitable for the creation of schemata that are to be used for digital maps. Therefore its construction is limited by the sRGB color space. 
 
-This method shows a reverse approach to design color schemes based on the color distance as described in chapter \ref{subsec:equation} \parencite{brychtova2017}. The online tool Color Scheme Generator 1.0 has implemented this software (freely available at: http://eyetracking.upol.cz/color).
+This method shows a reverse approach to design color schemes based on the color distance as described in chapter \ref{subsec:equation} \parencite{brychtovaC2017}. The online tool Color Scheme Generator 1.0 has implemented this software (freely available at: http://eyetracking.upol.cz/color).
 
 The user of this online tool can display a color scheme by selecting a base color of the whole scheme, the color classes and the CIEDE2000 color distances between the classes \parencite{brychtovaDole2015}
 
 \section{Conclusion}
 
-Der Farbabstand (eine von der International Commission on Illumination zur Quantifizierung der menschlichen FÃ¤higkeit, zwischen Farben zu unterscheiden) wurde empirisch nachgewiesen, dass er ein wichtiger Faktor fÃ¼r die Lesbarkeit von Karten insgesamt ist (z. B. Brychtova und Coltekin 2015, Brychtova 2015, Brychtova und Coltekin 2014, Brychtova und Vondrakova 2014). Unzureichender Farbabstand zwischen kartografischen Symbolen beeintrÃ¤chtigt die FÃ¤higkeit der Kartennutzer, die und Interpretation der visualisierten rÃ¤umlichen Informationen.
-
-\parencite{brychtovaDole2015}
+Der Farbabstand (eine von der International Commission on Illumination zur Quantifizierung der menschlichen Fähigkeit, zwischen Farben zu unterscheiden) wurde empirisch nachgewiesen, dass er ein wichtiger Faktor für die Lesbarkeit von Karten insgesamt ist (z. B. Brychtova und Coltekin 2015, Brychtova 2015, Brychtova und Coltekin 2014, Brychtova und Vondrakova 2014). Unzureichender Farbabstand zwischen kartografischen Symbolen beeinträchtigt die Fähigkeit der Kartennutzer, die und Interpretation der visualisierten räumlichen Informationen.\parencite{brychtovaDole2015}
 
 
 
