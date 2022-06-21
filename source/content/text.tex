@@ -92,10 +92,16 @@ f(t) =
 \end{cases}
 \end{equation}
 
-Finally the last step is to calculate the color distance $\Delta E_{00}$ between two colors with the CIEDE2000 model. 
+Finally the last step is to calculate the color distance $\Delta E_{00}$ between two colors with the CIEDE2000 model. However the following equation takes three parametric coefficents $k_{L}, k_{C}$ and $k_{H}$ to adjust the equation according to observer enviroment.
+
 \begin{equation}
 \Delta E_{00}= \sqrt{(\frac{\Delta L'}{k_{L}S_{L}})^{2}+(\frac{\Delta C'}{k_{C}S_{C}})^{2}+(\frac{\Delta H'}{k_{H}S_{H}})^{2}+R_{T}\frac{\Delta C'}{k_{C}S_{C}}\frac{\Delta H'}{k_{H}S_{H}}}
 \end{equation}
+
+where $\Delta L', \Delta C'$ and $\Delta H'$ are the CIELAB metric lightness, chroma, and hue differences, calculated
+between the standard and sample in a pair and $S_{L}, S_{C}$ and $S_{H}$ are the weighting functions for the lightness,
+chroma, and hue components. However as the formulars are fairly large the equations can be found in the \ref{further equation}.
+The $k_{L}, k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. (Lue et al 2001 \parencite{brychtova2015}). 
 \subsection{Number of classes}
 \textcite{brychtova2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{brychtova2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
 
@@ -122,8 +128,12 @@ The greater the spatial distance between two color cells, the more the ability t
 
 \subsubsection{Brightness of colors}
 
+An evaluting case study of color distqances in ColorBrewer 2.0 from \textcite{brychtova2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtova2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schmes with 9 classes show their largest color distances in the darker middle colors.
+Bild einfügen. 
+
+
 \section{Examples}
-\subsection{ColorBrewer2.0}
+\subsection{ColorBrewer 2.0}
 Brewer and her colleagues (Brewer eta!. 2003; Brewer 1986, 1992, 1994, 1996, 1997, 1999; Harrower and Brewer 2003) did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. ColorBrewer 2.0 offers the user a choice between 18 sequential, 9 divergent and 8 qualitative color schemes. Depending on the selection, a distinction can be made between 3 and 12 classes. They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtova2017}. 
 
 The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion. Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
