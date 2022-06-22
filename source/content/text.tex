@@ -106,13 +106,10 @@ chroma, and hue components.  However, since the formulas are quite extensive, th
 The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
 
 \subsection{Number of classes}
-<<<<<<< Updated upstream
-\textcite{brychtovaC2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{ brychtovaC2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
-=======
+
 Obviously the number of classes also has an impact on the differentiability of colors. For example if we reduce the number of classes to 1 (which makes no sense in practice) the color will be determined in hopefully all cases. The more classes we create, the harder it becomes to tell the colors apart as the propability decreases. In addition to that it is clear that the color distance decreases with more classes as the number of color shades are limited by the color space. 
 
-\textcite{brychtova2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{brychtova2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
->>>>>>> Stashed changes
+\textcite{brychtovaC2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{brychtovaC2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
 
 \begin{table}[h!]
 \centering
@@ -137,15 +134,9 @@ The greater the spatial distance between two color cells, the more the ability t
 
 \subsubsection{Brightness of colors}
 
-<<<<<<< Updated upstream
 An evaluting case study of color distances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors.
 
 Bild einfügen. 
-=======
-An evaluting case study of color distqances in ColorBrewer 2.0 from \textcite{brychtova2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtova2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schmes with 9 classes show their largest color distances in the darker middle colors.
-Bild einfÃ¼gen. 
->>>>>>> Stashed changes
-
 
 \section{Examples}
 \subsection{ColorBrewer2.0}
@@ -173,6 +164,20 @@ This method shows a reverse approach to design color schemes based on the color 
 The user of this online tool can display a color scheme by selecting a base color of the whole scheme, the color classes and the CIEDE2000 color distances between the classes \parencite{brychtovaDole2015}
 
 \section{Conclusion}
+
+
+Colors which can not be differentiated correctly and quickly are a main problem when reading choropletic maps. it can lead to errors when it comes to understanding and interpretating the map. Therefore the selection of colors should be done wisely.
+
+The percptation of colors by human eyes is not stable, it is affected by enviroment light, shadows and sorrounding materials. In addition the color perceptation differs from human to human and also changes with time. Extrem examples of course are colorblind people. 
+
+Irgendwas über color spaces.
+
+It can be concluded, that the ability to differentiate colors on a choropletic map is mainly affected by the color distance. The color distance is a measure to quantify the difference of two colors or shades of a color from the perspective of an human eye. 
+Another aspect which is closly connected to the color distance is the number of classes. Since the colors are limited by the color space sRGB the color distances is likely to become smaller when choosing more classes. 
+In addition to that the spatial distance between two colors also has an impact how precisly humans can differ the colors.
+\textcite{brychtovaC2017} has figured out that the color schmes at the well known software ColorBrewer 2.0 tend to have wider colors distances at dark colors, which is an indicator that darker colors are more difficult to differentiate. A thesis which could be evaluated further also with the ulterior motive that the calculation of the color distance does consider the brightness of the color.
+
+Examples for usefull software when selection color schemes and specific colors for chorpletic maps are ColorBrewer 2.0 and Sequential Color Scheme Generator. Last one is definatly a tool for map creators with previous knowledge about color distance. 
 
 Der Farbabstand (eine von der International Commission on Illumination zur Quantifizierung der menschlichen Fähigkeit, zwischen Farben zu unterscheiden) wurde empirisch nachgewiesen, dass er ein wichtiger Faktor für die Lesbarkeit von Karten insgesamt ist (z. B. Brychtova und Coltekin 2015, Brychtova 2015, Brychtova und Coltekin 2014, Brychtova und Vondrakova 2014). Unzureichender Farbabstand zwischen kartografischen Symbolen beeinträchtigt die Fähigkeit der Kartennutzer, die und Interpretation der visualisierten räumlichen Informationen.\parencite{brychtovaDole2015}
 
