@@ -106,7 +106,13 @@ chroma, and hue components.  However, since the formulas are quite extensive, th
 The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
 
 \subsection{Number of classes}
+<<<<<<< Updated upstream
 \textcite{brychtovaC2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{ brychtovaC2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
+=======
+Obviously the number of classes also has an impact on the differentiability of colors. For example if we reduce the number of classes to 1 (which makes no sense in practice) the color will be determined in hopefully all cases. The more classes we create, the harder it becomes to tell the colors apart as the propability decreases. In addition to that it is clear that the color distance decreases with more classes as the number of color shades are limited by the color space. 
+
+\textcite{brychtova2017} makes the finding that with ColorBrewer 2.0 the color distance becomes smaller the more classes are used, which is to be expected. For the selected 18 sequential schemes, the color distance was analyzed and calculated between 3, 6 and 9 classes. These numbers of classes were selected according to \textcite{brychtova2017}, since they represent the minimum, maximum and middle of the class selection. Thus, the results (see table \ref{tab:classes}) show that the number of classes have an influence on how the distance of the colors is chosen and thus becomes distinguishable to the human eye. 
+>>>>>>> Stashed changes
 
 \begin{table}[h!]
 \centering
@@ -131,9 +137,14 @@ The greater the spatial distance between two color cells, the more the ability t
 
 \subsubsection{Brightness of colors}
 
+<<<<<<< Updated upstream
 An evaluting case study of color distances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors.
 
 Bild einfügen. 
+=======
+An evaluting case study of color distqances in ColorBrewer 2.0 from \textcite{brychtova2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtova2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schmes with 9 classes show their largest color distances in the darker middle colors.
+Bild einfÃ¼gen. 
+>>>>>>> Stashed changes
 
 
 \section{Examples}
