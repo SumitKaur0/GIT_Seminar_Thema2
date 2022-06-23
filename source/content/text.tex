@@ -1,7 +1,6 @@
-\section{Hypothese}
+\section{Introduction}
 Die Differenzierbarkeit von Farben beim Betrachten von Choroplethenkarten hängt vorallem von der Farbdistanz zwischen den Farben und der Anzahl der Farbklassen ab.
 
-\section{Introduction}
 From a designer's perspective, colors play an essential role in cartography. Nevertheless, according to \textcite{brychtovaC2017}, there is little research to empirically determine the minimum effective color distance to safely and correctly distinguish cartographic symbols. 
 
 The ability to distinguish colors and shades of the same color plays an important role in cartography \parencite{coltekin2017}.
@@ -12,6 +11,8 @@ Lack of proper visual distance in variables colour hue and colour value is a kno
 
 The color distance is an important factor for the readability of maps. This has also been demonstrated by e.g. \textcite{brychtovaC2015,brychtova2015, brychtovaV2014,brychtovaC2016}.
 
+Aufbau der Arbeit??
+
 \subsection{Simple Choropleth maps}
 Unlike chorochromatic maps, which visualize nominal (qualitative) data, simple choropleth maps have made it their business to display quantitative data in terms of area. In doing so, hue, saturation and brightness are used to show corresponding changes in the data. Although in theory choropleth maps are only useful for data related to areas \parencite{hruby2016, schiewe2015}, in practice they are also used for non-area related data e.g. incidence values.
 
@@ -21,14 +22,14 @@ Due to the public availability of static data, the production of these maps is e
 
 \section{Basic color information}
 
-To understand the following chapters it is important to know some basics about human' color perception and color models.
+To understand the following chapters, it is important to know some basics about human color perception and color models.
 
 \subsection{Human' color perception}
 Although our current understanding is that color vision results from the response of three photoreceptor cells in the retina to incident light, their perception cannot be fully understood. This may be due to both individual and environmental factors that influence color perception \parencite{lafer2015, xiao2016}.
 
 Some of these factors can be, for example, the amount of light in the environment, shadows, surrounding materials, and reflectivity. In addition, the viewer's prior knowledge and cognitive biases play a significant role in color perception \parencite{derefeldt2004, foster2011}.
 
-In addition, there is evidence that the number and distribution of photoreceptors in the eye influences what we see \parencite{roy1991}, and that our brain assumes a particular direction or light source e.g., \parencite{gegenfurtner2015, lafer2015}.
+In addition, there is evidence that the number and distribution of photoreceptors in the eye influences what we see \textcite{roy1991}, and that our brain assumes a particular direction or light source e.g. \textcite{gegenfurtner2015, lafer2015}.
 
 Thus, it can be said that the color perception of an individual is not stable over space and time. The same is true not only for individuals but also for groups.  
 
@@ -46,8 +47,7 @@ To the latter model (perceptually uniform) belong for example the Munsell system
 A color space is understood to be all existing colors that can be represented e.g. by a screen, printer or the human eye, which are generated from a combination of the components of a model \parencite{munsell1915}. Color spaces are also important cause it is important to know that mediums are limited in the colors they can visualize. When creating a map it should be the goal that the colors used can be visualized by the medium where the map will be shown.  
 
 \section{Criteria}
-
-In the following chapter critirias will be introduced which affects how humans differentiate colors on a choropletic map. This is mainly affected by the color distance but there are also other aspects which can create difficulties when reading the colors of a map.
+The following chapter presents criteria that relate to how people distinguish colors on a choropleth map. This is mainly influenced by color spacing, although there are other aspects that can cause difficulties when reading the colors on a map.
 
 \subsection{Color distance}\label{subsection:distance}
 Visual distance in cartography is understood as a measurement of differences between visual variables such as size, shape and orientation \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color distance. In other words, certain change of colour in the perceptually uniform space produces equal change in human perception of that colour \parencite{brychtovaC2017}.
@@ -114,7 +114,7 @@ chroma, and hue components.  However, since the formulas are quite extensive, th
 The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
 \subsection{Further aspects}
 
-While the color distance of course has the biggest impact on human abbility to differentiate colors there are some other aspects which play a role. 
+While color distance obviously has the greatest impact on the human ability to distinguish colors, there are several other aspects that play a role. 
 
 \subsubsection{Number of classes}
 
@@ -143,21 +143,23 @@ The greater the spatial distance between two color cells, the more the ability t
 
 \subsubsection{Brightness of colors}
 
-An evaluting case study of color distances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes (see figure \ref{fig:colordist}). Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors (see figure \ref{fig:colordist}).
+An evaluting case study of color distances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes (see figure \ref{fig:colordist}).
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\linewidth]{source/images/colordist}
+	\includegraphics[width=0.7\linewidth]{source/images/colordist}
 	\caption{Colors schemes classes \\
 		(Source: \textcite{brychtovaC2017})}
 	\label{fig:colordist}
 \end{figure}
 
+Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors (see figure \ref{fig:colordist}).
+
 \section{Examples}
 \subsection{ColorBrewer2.0}
 Brewer and her colleagues \parencite{brewer2003, brewer1994, brewer1996, brewer1997, brewer1999} did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. ColorBrewer 2.0 offers the user a choice between 18 sequential, 9 divergent and 8 qualitative color schemes. Depending on the selection, a distinction can be made between 3 and 12 classes. They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtovaC2017}. 
 
-The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion (\ref{fig:munsell}). Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple).
+The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion (see figure \ref{fig:munsell}). Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple).
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\linewidth]{source/images/munsell}
