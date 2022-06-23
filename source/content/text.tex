@@ -10,8 +10,10 @@ Even subtle manipulation of color spacing shows significant effects on the impac
 
 Lack of proper visual distance in variables colour hue and colour value is a known contributor to legibility problems in map use tasks \parencite{chesneau2007, steinrucken2013, stigmar2010}.
 
+The color distance is an important factor for the readability of maps. This has also been demonstrated by e.g. \textcite{brychtovaC2015,brychtova2015, brychtovaV2014,brychtovaC2016}.
+
 \subsection{Simple Choropleth maps}
-Unlike chorochromatic maps, which visualize nominal (qualitative) data, simple choropleth maps have made it their business to display quantitative data in terms of area. In doing so, hue, saturation and brightness are used to show corresponding changes in the data. Although in theory choropleth maps are only useful for data related to areas (Bollmann et al. 2001), in practice they are also used for non-area related data. E.G. \textcolor{red}{???} \parencite{hruby2016, schiewe2015}.
+Unlike chorochromatic maps, which visualize nominal (qualitative) data, simple choropleth maps have made it their business to display quantitative data in terms of area. In doing so, hue, saturation and brightness are used to show corresponding changes in the data. Although in theory choropleth maps are only useful for data related to areas \parencite{hruby2016, schiewe2015}, in practice they are also used for non-area related data e.g. incidence values.
 
 Some advantages of choropleth maps are e.g. the simplified visibility. For this, the data are classified. For example, one can distinguish between an equal interval and a quantile class division. With equal interval each class possesses the same size independently of its occupation, whereas with a quantile class division each class contains the same number of elements. Depending on the use case and data frequency, one or the other class division is more suitable, because they have a significant influence on the appearance of a map \parencite{schiewe2015, rahlf2020}.
 
@@ -134,25 +136,31 @@ The greater the spatial distance between two color cells, the more the ability t
 
 \subsubsection{Brightness of colors}
 
-An evaluting case study of color distances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes. Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors.
+An evaluting case study of color distances in ColorBrewer 2.0 from \textcite{brychtovaC2017} has investigated the color distances in 18 color schemes made by colorBrewer 2.0. All color chemes were investigated with 9, 6 and 3 classes. As a result \textcite{brychtovaC2017} figured out that mostly the darker the color becomes, the larger the color distance becomes (see figure \ref{fig:colordist}). Therefore it can be assumed that the deveolpers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors (see figure \ref{fig:colordist}).
 
-Bild einfügen. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{source/images/colordist}
+	\caption{Colors schemes classes \\
+		(Source: \textcite{brychtovaC2017})}
+	\label{fig:colordist}
+\end{figure}
 
 \section{Examples}
 \subsection{ColorBrewer2.0}
 Brewer and her colleagues \parencite{brewer2003, brewer1994, brewer1996, brewer1997, brewer1999} did research on color, developing color schemes to viualize both quantitative and qualitative data. In the process, the online software ColorBrewer 2.0 was developed, which can be very helpful for many applications. ColorBrewer 2.0 offers the user a choice between 18 sequential, 9 divergent and 8 qualitative color schemes. Depending on the selection, a distinction can be made between 3 and 12 classes. They used Munsell diagrams to design color schemes that would maintain consistency in perceived color distances between classes \parencite{brychtovaC2017}. 
 
-The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion (\ref{fig:munsell}). Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple). These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
-
+The Munsell Color System is a color system that is the first complete, most widely used, and still in use today. It is based on three essential criteria: Hue, Chroma and Value, with Hue being the most important criterion (\ref{fig:munsell}). Munsell chose five main hues: red (R), yellow (Y), green (G), blue (B) and purple (P). Now he subdivides the perceptible color nuances into further color tones, which are to represent the intermediate color tones: YR (yellow-red), GY (green-yellow), BG (blue-green), PB (purple-blue) and RP (red-purple).
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\linewidth]{source/images/munsell}
 	\caption{Munsell Color System \\
-	(Source: \textcite{munsell2007})}
+		(Source: \textcite{munsell2007})}
 	\label{fig:munsell}
 \end{figure}
+These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
 
-\subsection{Sequential color scheme generator}
+\subsection{Sequential Color Scheme generator}
 To develop a suitable sequential color scheme, the analytical geometry is calculated. The intersection of two subspaces is searched for. This is the intersection of the CIELAB color space and a straight line on which the color scheme lies.
 
 For this we look which color tones lie on the straight line. This follows at given distances defined with CIEDE2000. 
@@ -165,22 +173,20 @@ The user of this online tool can display a color scheme by selecting a base colo
 
 \section{Conclusion}
 
+Colors that cannot be distinguished correctly and quickly are a major problem when reading choropleth maps. They can lead to errors in understanding and interpreting the map. Therefore, the choice of colors should be made carefully.
 
-Colors which can not be differentiated correctly and quickly are a main problem when reading choropletic maps. it can lead to errors when it comes to understanding and interpretating the map. Therefore the selection of colors should be done wisely.
+The color perception of the human eye is not stable, it is influenced by environmental light, shadows and surrounding materials. Furthermore, color perception varies from person to person and also changes over time. The extreme example is, of course, color-blind people. 
 
-The percptation of colors by human eyes is not stable, it is affected by enviroment light, shadows and sorrounding materials. In addition the color perceptation differs from human to human and also changes with time. Extrem examples of course are colorblind people. 
+Irgendwas über color modell.
 
-Irgendwas über color spaces.
+It can be concluded that the ability to distinguish colors on a choropleth map is mainly influenced by the color distance. The color distance is a measure to quantify the difference between two colors or shades of a color from the perspective of the human eye. 
 
-It can be concluded, that the ability to differentiate colors on a choropletic map is mainly affected by the color distance. The color distance is a measure to quantify the difference of two colors or shades of a color from the perspective of an human eye. 
-Another aspect which is closly connected to the color distance is the number of classes. Since the colors are limited by the color space sRGB the color distances is likely to become smaller when choosing more classes. 
-In addition to that the spatial distance between two colors also has an impact how precisly humans can differ the colors.
-\textcite{brychtovaC2017} has figured out that the color schmes at the well known software ColorBrewer 2.0 tend to have wider colors distances at dark colors, which is an indicator that darker colors are more difficult to differentiate. A thesis which could be evaluated further also with the ulterior motive that the calculation of the color distance does consider the brightness of the color.
+Another aspect closely related to color spacing is the number of classes. Since colors are limited by the sRGB color space, color spacing is likely to become smaller as more classes are chosen. 
 
-Examples for usefull software when selection color schemes and specific colors for chorpletic maps are ColorBrewer 2.0 and Sequential Color Scheme Generator. Last one is definatly a tool for map creators with previous knowledge about color distance. 
+In addition, the spatial distance between two colors also affects how accurately humans can distinguish colors.
 
-Der Farbabstand (eine von der International Commission on Illumination zur Quantifizierung der menschlichen Fähigkeit, zwischen Farben zu unterscheiden) wurde empirisch nachgewiesen, dass er ein wichtiger Faktor für die Lesbarkeit von Karten insgesamt ist (z. B. Brychtova und Coltekin 2015, Brychtova 2015, Brychtova und Coltekin 2014, Brychtova und Vondrakova 2014). Unzureichender Farbabstand zwischen kartografischen Symbolen beeinträchtigt die Fähigkeit der Kartennutzer, die und Interpretation der visualisierten räumlichen Informationen.\parencite{brychtovaDole2015}
+\textcite{brychtovaC2017} found that color schemes in the popular ColorBrewer 2.0 software tend to have larger color distances for dark colors, which is an indicator that darker colors are harder to differentiate. A thesis that could also be further evaluated with the ulterior motive that the color spacing calculation takes into account the brightness of the color.
 
-
+Examples of useful softwares in selecting color schemes and specific colors for choropleth maps are ColorBrewer 2.0 and Sequential Color Scheme generator. The latter is definitely a tool for map makers with prior knowledge of color spacing. 
 
 %\bibliography
