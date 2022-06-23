@@ -21,6 +21,8 @@ Due to the public availability of static data, the production of these maps is e
 
 \section{Basic color information}
 
+To understand the following chapters it is important to know some basics about human' color perception and color models.
+
 \subsection{Human' color perception}
 Although our current understanding is that color vision results from the response of three photoreceptor cells in the retina to incident light, their perception cannot be fully understood. This may be due to both individual and environmental factors that influence color perception \parencite{lafer2015, xiao2016}.
 
@@ -34,14 +36,18 @@ Nevertheless, there are many efforts to model and quantify color perception such
 
 This color distance describes a metric that quantifies the human ability to visually distinguish differences between two colors see chapter \ref{subsection:distance} \parencite{coltekin2017}.
 
-\subsection{Color spaces}
+\subsection{Color models}
 There are a lot of color models that have set themselves the task of representing the logic of generating colors \parencite{kuehni2001}. These color models can be divided into four main groups: instrumental, pseudo-perceptual, colorimetric, and perceptual unitary color models.
 
-Instrumental color models include, for example, RBG or CMYK. Pseudoperceptual color models are e.g. HVS or HSB, whereas colorimetric color models are represented e.g. by CIE 1931 XYZ. To the latter model (perceptually uniform) belong for example the Munsell system, CIELAB or CIELUV. The most frequently used color models are the CIE 1931 XYZ or CIELAB. 
+In the majority of times we define colors by three RGB values which define the amount of red, green and blue color which combined forms a unique color. Such a color models are called Instrumental color models another example would be the CYMK Model which is used by printers.
+Pseudoperceptual color models are e.g. HVS or HSB, whereas colorimetric color models are represented e.g. by CIE 1931 XYZ.
+To the latter model (perceptually uniform) belong for example the Munsell system, CIELAB or CIELUV. Such color models tries to make a color model on how human eyes percept the colors. This will be important when calculating a distance between colors how humans see the colors. When calculating the color distance all color modells will play its role except the pseudoreceptual color models. 
 
-A color space is understood to be all existing colors that can be represented e.g. by a screen, printer or the human eye, which are generated from a combination of the components of a model \parencite{munsell1915}.
+A color space is understood to be all existing colors that can be represented e.g. by a screen, printer or the human eye, which are generated from a combination of the components of a model \parencite{munsell1915}. Color spaces are also important cause it is important to know that mediums are limited in the colors they can visualize. When creating a map it should be the goal that the colors used can be visualized by the medium where the map will be shown.  
 
 \section{Criteria}
+
+In the following chapter critirias will be introduced which affects how humans differentiate colors on a choropletic map. This is mainly affected by the color distance but there are also other aspects which can create difficulties when reading the colors of a map.
 
 \subsection{Color distance}\label{subsection:distance}
 Visual distance in cartography is understood as a measurement of differences between visual variables such as size, shape and orientation \parencite{brychtova2015}. Here we focus on the variable of color hue and color value. The human perceived difference between two colors or color shades can be described as the color distance. In other words, certain change of colour in the perceptually uniform space produces equal change in human perception of that colour \parencite{brychtovaC2017}.
@@ -51,16 +57,16 @@ To describe the distance of two colors scientistis have developed a method to de
 The colors of digital maps are usually represented in the RGB color space, since the colors on most, if not all, digital screens are generated with these three colors (red, green, blue). However RGB values do not lead to specific color if they are not related to an absolut color space such as sRGB, Adobe RGB or ProPhoto RGB. To use the most realistic color space, colors should be specified and selected in the sRGB color space in the initial situation. Why most realistic? As mentioned before sRGB is the smallest color space of the three. The vast majority of digital screens cannot create all Adobe RGB or even ProPhoto RGB colors. Even sRGB isn't fully supported by cheap laptop screens. However sRGB is known as the default color space \parencite{kenrockwell2006}. Therefore sRGB should be choosed to increase the chance that the users screen actually is able to display the color which was choosed by the creater of a map. 
 
 \subsubsection{Equation}\label{subsec:equation}
-The first step to calculate the color distance $\Delta E_{00}$ is the transformation from the original color space (as mentioned above this would be sRGB in most cases) to the CIE 1931 XYZ color space. For that the RGB values have to be normalized so the values lie in the interval [0; 1]. 
+The first step to calculate the color distance $\Delta E_{00}$ is the transformation from the original color space (as mentioned above this would be sRGB in most cases) to the CIE 1931 XYZ color space (see equations \ref{equ_1} and \ref{equ_2}). For that the RGB values have to be normalized so the values lie in the interval [0; 1]. 
 
-\begin{equation}
+\begin{equation}\label{equ_1}
 R_{lin} = G_{lin} = B_{lin} =
 	\begin{cases}
 		\frac{V_{R,G,B}}{12.92}, & \text{if $V_{R,G,B} \leq 0.04045$}\\
 		\sqrt[5]{(\frac{R + 0.055}{1 + 0.055})^{12}}, & \text{otherwise}
 	\end{cases}
 \end{equation}
-\begin{equation}
+\begin{equation}\label{equ_2}
 \left[ \begin{array}{r}
 X \\ 
 Y \\
@@ -76,19 +82,19 @@ B_{lin} \\
 \end{array}\right]
 \end{equation}
 
-The second step is the transformation of the colors into CIE Lab. The CIELAB Colorspace, also known as CIE 1976 (L*, a*, b*) describes all colors perceptible by human eyes \parencite{levkowitz1997}. It consists of three components: L describes the brightness [0 - 100], a describes the axis between red and green and b describes the axis of the blue and yellow colors. While negative values stand for green/blue colors and positive values for magenta and yellow). Theoretically the a and b values are not limited but in praxis human eyes can only see colors upin a specific value. 
+The second step is the transformation of the colors into CIE Lab (see  equations \ref{equ_3} - \ref{equ_6}). The CIELAB Colorspace, also known as CIE 1976 (L*, a*, b*) describes all colors perceptible by human eyes \parencite{levkowitz1997}. It consists of three components: L describes the brightness [0 - 100], a describes the axis between red and green and b describes the axis of the blue and yellow colors. While negative values stand for green/blue colors and positive values for magenta and yellow). Theoretically the a and b values are not limited but in praxis human eyes can only see colors upin a specific value. 
 
-\begin{equation}
+\begin{equation}\label{equ_3}
 L = 116 f\left(\frac{Y}{Y_{n}}\right)-16
 \end{equation}
-\begin{equation}
+\begin{equation}\label{equ_4}
 a = 500 \left[f\left(\frac{X}{X_{n}}\right)-f\left(\frac{Y}{Y_n}\right)\right]
 \end{equation}
-\begin{equation}
+\begin{equation}\label{equ_5}
 b = 200 \left[f\left(\frac{Y}{Y_{n}}\right)-f\left(\frac{Z}{Z_n}\right)\right]
 \end{equation}
 where
-\begin{equation}
+\begin{equation}\label{equ_6}
 f(t) =
 \begin{cases}
 	\sqrt[3]{t}, & \text{if $t > (\frac{6}{29})^{3}$}\\
@@ -96,9 +102,9 @@ f(t) =
 \end{cases}
 \end{equation}
 
-Finally the last step is to calculate the color distance $\Delta E_{00}$ between two colors with the CIEDE2000 model. However the following equation takes three parametric coefficents $k_{L}, k_{C}$ and $k_{H}$ to adjust the equation according to observer enviroment.
+Finally the last step is to calculate the color distance $\Delta E_{00}$ between two colors with the CIEDE2000 model (see equation \ref{equ_7}).
 
-\begin{equation}
+\begin{equation}\label{equ_7}
 \Delta E_{00}= \sqrt{\left(\frac{\Delta L'}{k_{L}S_{L}}\right)^{2}+\left(\frac{\Delta C'}{k_{C}S_{C}}\right)^{2}+\left(\frac{\Delta H'}{k_{H}S_{H}}\right)^{2}+R_{T}\frac{\Delta C'}{k_{C}S_{C}}\frac{\Delta H'}{k_{H}S_{H}}}
 \end{equation}
 
@@ -106,8 +112,11 @@ where $\Delta L'$, $\Delta C'$ and $\Delta H'$ are the CIELAB metric lightness, 
 between the standard and sample in a pair and $S_{L}$, $S_{C}$ and $S_{H}$ are the weighting functions for the lightness,
 chroma, and hue components.  However, since the formulas are quite extensive, the equations can be read in the appendix \ref{further equation}.
 The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
+\subsection{Further aspects}
 
-\subsection{Number of classes}
+While the color distance of course has the biggest impact on human abbility to differentiate colors there are some other aspects which play a role. 
+
+\subsubsection{Number of classes}
 
 Obviously the number of classes also has an impact on the differentiability of colors. For example if we reduce the number of classes to 1 (which makes no sense in practice) the color will be determined in hopefully all cases. The more classes we create, the harder it becomes to tell the colors apart as the propability decreases. In addition to that it is clear that the color distance decreases with more classes as the number of color shades are limited by the color space. 
 
@@ -128,8 +137,6 @@ Obviously the number of classes also has an impact on the differentiability of c
 	\end{tabular}
 \label{tab:classes}
 \end{table}
-
-\subsection{Further aspects}
 
 \subsubsection{Spatial distance}
 The greater the spatial distance between two color cells, the more the ability to distinguish the colors decreases. This is true for both sequential and qualitative schemes. However, at a color distance of $\Delta E_{00}$ = 10, the accuracy of color discrimination increases, even at relatively large spatial distances \parencite{brychtovaC2017}. 
