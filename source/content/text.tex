@@ -186,16 +186,18 @@ Colors that cannot be distinguished correctly and quickly are a major problem wh
 
 The color perception of the human eye is not stable, it is influenced by environmental light, shadows and surrounding materials. Furthermore, color perception varies from person to person and also changes over time. The extreme example is, of course, color-blind people. 
 
-Irgendwas über color modell.
+There are different color models for different purposes the RGB Color model is well known as it stand for the way color are produced ondigital screens. However other color Models try to represent colors how they are perceived by the human eye. 
 
-It can be concluded that the ability to distinguish colors on a choropleth map is mainly influenced by the color distance. The color distance is a measure to quantify the difference between two colors or shades of a color from the perspective of the human eye. 
+It can be concluded that the ability to distinguish colors on a choropleth map is mainly influenced by the color distance. The color distance is a measure to quantify the difference between two colors or shades of a color from the perspective of the human eye. When calculating the color distance the colors need to be converted into a perceptual unitary color model it is also important to know that the color space where the selected colors are from should be sRGB to increase the chance that the colors can be created by the screens where the map is shown. 
 
 Another aspect closely related to color spacing is the number of classes. Since colors are limited by the sRGB color space, color spacing is likely to become smaller as more classes are chosen. 
 
-In addition, the spatial distance between two colors also affects how accurately humans can distinguish colors.
-
-\textcite{brychtovaC2017} found that color schemes in the popular ColorBrewer 2.0 software tend to have larger color distances for dark colors, which is an indicator that darker colors are harder to differentiate. A thesis that could also be further evaluated with the ulterior motive that the color spacing calculation takes into account the brightness of the color.
+In addition, the spatial distance between two colors also affects how accurately humans can distinguish colors. The greater the spatial distance the harder it get for humans to distinguish two colors. 
 
 Examples of useful softwares in selecting color schemes and specific colors for choropleth maps are ColorBrewer 2.0 and Sequential Color Scheme generator. The latter is definitely a tool for map makers with prior knowledge of color spacing. 
+
+\textcite{brychtovaC2017} found that color schemes in the popular ColorBrewer 2.0 software tend to have larger color distances for dark colors, which is an indicator that darker colors are harder to differentiate. A thesis that could also be further evaluated with the ulterior motive that the color spacing calculation takes the brightness of colors into account.
+
+
 
 %\bibliography
