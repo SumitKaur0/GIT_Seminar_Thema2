@@ -91,9 +91,11 @@ Finally the last step is to calculate the color distance $\Delta E_{00}$ between
 
 where $\Delta L'$, $\Delta C'$ and $\Delta H'$ are the CIELAB metric lightness, chroma, and hue differences, calculated between the standard and sample in a pair and $S_{L}$, $S_{C}$ and $S_{H}$ are the weighting functions for the lightness, chroma, and hue components.  However, since the formulas are quite extensive, the equations can be read in the appendix \ref{further equation}.
 The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
+
 \subsubsection{Results}
 As a result, \textcite{brychtovaC2015, brychtovaC2016} figured out that a color distance of 10 can be considered as a safe color distance.
 \textcite{coltekin2015} investigated differences in accuracy, response time and eye-tracking metrics on both a sequential and qualitative map with color distances of 2, 4, 6, 8 and 10 between the six classes color scheme.  Regarding to the accurace \textcite{coltekin2015} study found out that color distance had an accuracy over 95\% while the accuracy at color distance of 2 drops down to 80\%. In addition to that the response time also dropped slightly when the color distance increases. While the average number of transition also drops with increasing color distance it did not offer many additional explanations. \textcite{coltekin2015} put this down to the simplicity of the task. 
+
 \subsection{Further Aspects}
 While color distance obviously has the greatest impact on the human ability to distinguish colors, there are several other aspects that play a role. 
 
@@ -131,7 +133,6 @@ The result of the study, which was already mentioned in chapter \ref{subsub:numb
 		(Source: \textcite{brychtovaC2017})}
 	\label{fig:colordist}
 \end{figure}
-
 Therefore, it can be assumed that the developers of ColorBrewer 2.0 came to the result that darker colors needs a larger color distance to correctly determine a difference between colors. Color schemes with 9 classes show their largest color distances in the darker middle colors (see figure \ref{fig:colordist}).
 
 \section{Examples}
@@ -151,9 +152,8 @@ The Munsell Color System is a color system that is the first complete, most wide
 These ten hues are further subdivided a few times into ten gradations. Numbers from 0 to 10 are also added to the hues. Towards the outside, the saturation of the color (chroma) increases. The vertical center axis, which ranges from white (value 10) to black (value 0), which can be represented with colorants, is represented by the value. This results in a 10-row gray scale \parencite{munsell1915}.
 
 \subsection{Sequential Color Scheme generator}
-To develop a suitable sequential color scheme, the analytical geometry is calculated. The goal is to find an intersection point of two subspaces. This is the intersection of the CIELAB color space and a straight line on which the color scheme lies. For this, we look which color tones lie on this straight line. This follows at given distances defined with CIEDE2000. It must be kept in mind that this method is only suitable for the creation of schemata that are to be used for digital maps. Therefore, its construction is limited by the sRGB color space. 
-
-This method shows a reverse approach to design color schemes based on the color distance, as described in chapter \ref{subsec:equation} \parencite{brychtovaC2017}. The online tool Color Scheme generator 1.0 has implemented this software (freely available at: http://eyetracking.upol.cz/color). The user of this online tool can display a color scheme by selecting a base color of the whole scheme, the color classes and the CIEDE2000 color distances between the classes \parencite{brychtovaDole2015}
+To develop a suitable sequential color scheme, the analytical geometry is calculated. The goal is to find an intersection point of two subspaces. This is the intersection of the CIELAB color space and a straight line on which the color scheme lies. For this, we look which color tones lie on this straight line. This follows at given distances defined with CIEDE2000. It must be kept in mind that this method is only suitable for the creation of schemata that are to be used for digital maps. Therefore, its construction is limited by the sRGB color space.  This method shows a reverse approach to design color schemes based on the color distance, as described in chapter \ref{subsec:equation} \parencite{brychtovaC2017}. \\
+The online tool Color Scheme generator 1.0 has implemented this software (freely available at: http://eyetracking.upol.cz/color). The user of this online tool can display a color scheme by selecting a base color of the whole scheme, the color classes and the CIEDE2000 color distances between the classes \parencite{brychtovaDole2015}
 
 \section{Conclusion}
 
@@ -164,6 +164,3 @@ If we look back at the hypothesis, it can be confirmed. However, it can be said 
 In addition, the spatial distance between two colors also affects how accurately humans can distinguish colors. The greater the spatial distance, the harder it gets for humans to distinguish two colors. 
 
 Examples of useful software products for selecting color schemes and specific colors for choropleth maps are ColorBrewer 2.0 and Sequential Color Scheme generator. The latter is definitely a tool for map creators with prior knowledge of color spacing. \textcite{brychtovaC2017} found that color schemes in the popular ColorBrewer 2.0 software tend to have larger color distances for dark colors, which is an indicator that darker colors are harder to differentiate. A thesis that could also be further evaluated with the ulterior motive that the color spacing calculation takes the brightness of colors into account.
-
-
-\bibliography
