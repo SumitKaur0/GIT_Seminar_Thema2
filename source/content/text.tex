@@ -38,7 +38,6 @@ To describe the distance of two colors, scientists have developed a method to de
  
 The colors of digital maps are usually represented in the RGB color space, since the colors on most, if not all, digital screens are generated with these three colors (red, green, blue). However, RGB values do not lead to specific color if they are not related to an absolute color space such as sRGB, Adobe RGB or ProPhoto RGB. To use the most realistic color space, colors should be specified and selected in the sRGB color space in the initial situation. Why most realistic? As mentioned before, sRGB is the smallest color space of the three. The vast majority of digital screens cannot create all Adobe RGB or even ProPhoto RGB colors. Even sRGB isn't fully supported by cheap laptop screens. However, sRGB is known as the default color space \parencite{kenrockwell2006}. Therefore, sRGB should be chosen to increase the chance that the user's screen actually is able to display the color which were selected by the creator of a map. 
 
-As a result, \textcite{brychtovaC2015, brychtovaC2016} figured out that a color distance of 10 can be considered as a safe color distance.
 
 \subsubsection{Equation}\label{subsec:equation}
 The first step to calculate the color distance $\Delta E_{00}$ is the transformation from the original color space (as mentioned above this would be sRGB in most cases) to the CIE 1931 XYZ color space (see equations \ref{equ_1} and \ref{equ_2}). For that the RGB values have to be normalized so the values lie in the interval [0; 1]. 
@@ -95,7 +94,9 @@ where $\Delta L'$, $\Delta C'$ and $\Delta H'$ are the CIELAB metric lightness, 
 between the standard and sample in a pair and $S_{L}$, $S_{C}$ and $S_{H}$ are the weighting functions for the lightness,
 chroma, and hue components.  However, since the formulas are quite extensive, the equations can be read in the appendix \ref{further equation}.
 The $k_{L}$, $k_{C}$ and $k_{H}$ values are the parametric factors to be adjusted according to different viewing parameters such as textures, backgrounds, separations etc. \parencite{luo2001}.
-
+\subsubsection{Results}
+As a result, \textcite{brychtovaC2015, brychtovaC2016} figured out that a color distance of 10 can be considered as a safe color distance.
+\textcite{coltekin2015} investigated differences in accuracy, response time and eye-tracking metrics on both a sequential and qualitative map with color distances of 2, 4, 6, 8 and 10 between the six classes color scheme.  Regarding to the accurace \textcite{coltekin2015} study found out that color distance had an accuracy over 95\% while the accuracy at color distance of 2 drops down to 80\%. In addition to that the response time also dropped slightly when the color distance increases. While the average number of transition also drops with increasing color distance it did not offer many additional explanations. \textcite{coltekin2015} put this down to the simplicity of the task. 
 \subsection{Further Aspects}
 While color distance obviously has the greatest impact on the human ability to distinguish colors, there are several other aspects that play a role. 
 
